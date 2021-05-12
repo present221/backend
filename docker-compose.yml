@@ -1,0 +1,17 @@
+version: "3"
+services:
+  backend:
+    build: .
+    container_name: backend
+    environment:
+      - MYSQL_DATABASE=cloth_shop
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=PDM069096126pdm
+    volumes: 
+      - ./image:/image
+    ports:
+      - "9090:9090"
+networks:
+  default:
+    external:
+      name: clothshopnetwork
